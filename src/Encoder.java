@@ -11,7 +11,9 @@ public class Encoder {
         System.out.print("Enter plain text: ");
         Scanner s = new Scanner(System.in);
         String message = s.nextLine();
-        String code = "";
+
+        StringBuilder code = new StringBuilder();
+
         for (char c : message.toCharArray()) {
 
             // if alphabet and uppercase...
@@ -26,7 +28,7 @@ public class Encoder {
                 if (c > 122) c -= 26;
             }
 
-            code += (char) c;
+            code.append(c);
         }
         System.out.println("Encoded text: " + code);
     }
