@@ -2,7 +2,13 @@ import java.util.Scanner;
 
 public class Encoder {
 
+    private static final double version = 0.2;
+
     public static void main(String[] args) {
+
+        System.out.println("ROT-13 Encoder v" + version);
+
+        System.out.print("Enter plain text: ");
         Scanner s = new Scanner(System.in);
         String message = s.nextLine();
         String code = "";
@@ -22,6 +28,6 @@ public class Encoder {
 
             code += (char) c;
         }
-        System.out.println(code);
+        System.out.println("Encoded text: " + code);
     }
 }
