@@ -8,11 +8,17 @@ public class Encoder {
 
         System.out.println("ROT-13 Encoder v" + version);
 
-        System.out.print("Enter plain text: ");
-        Scanner s = new Scanner(System.in);
-        String message = s.nextLine();
-
         StringBuilder code = new StringBuilder();
+        String message;
+
+        if (args.length > 0) {
+            message = String.join(" ", args);
+            System.out.println("Text from command line: " + message);
+        } else {
+            System.out.print("Enter plain text: ");
+            Scanner s = new Scanner(System.in);
+            message = s.nextLine();
+        }
 
         for (char c : message.toCharArray()) {
 
