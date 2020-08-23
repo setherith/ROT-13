@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="ROT-13:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/</output-path>
+    <root id="root">
+      <element id="archive" name="ROT-13.jar">
+        <element id="module-output" name="ROT-13" />
+      </element>
+    </root>
+  </artifact>
+</component>
