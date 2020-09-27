@@ -1,6 +1,10 @@
 package net.cadmuslabs.ui;
 
+import net.cadmuslabs.core.Encoder;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class EncoderUI extends JFrame {
 
@@ -24,19 +28,33 @@ public class EncoderUI extends JFrame {
         JLabel lblOutput = new JLabel("Output:");
         lblOutput.setBounds(10, 40, 75, 25);
 
-        JLabel lblResult = new JLabel();
-        lblResult.setBounds(75, 40, 315, 25);
+        JTextField txtResult = new JTextField();
+        txtResult.setBounds(75, 40, 315, 25);
 
         JButton btnExit = new JButton("Exit");
         btnExit.setBounds(10, 70, 100, 25);
+        btnExit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
 
         JButton btnEncode = new JButton("Encode");
         btnEncode.setBounds(287, 70, 100, 25);
+        btnEncode.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String encodedMessage = Encoder.Encode(txtInput.getText());
+                txtResult.setText(encodedMessage);
+            }
+        });
+
 
         add(lblInput);
         add(txtInput);
         add(lblOutput);
-        add(lblResult);
+        add(txtResult);
         add(btnExit);
         add(btnEncode);
 
